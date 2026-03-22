@@ -1,0 +1,1 @@
+Place your project images here. Ensure they are named identically to the tags in the code (e.g., encodex.png, dr_tale.png, hexverify.png, masoom.png) and they will instantly map to your project cards.

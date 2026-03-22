@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+:root {
+  --primary: #0a0a0b;
+  --secondary: #a1a1aa;
+  --tertiary: #18181b;
+  --accent: #d946ef;
+  --accent-light: #e879f9;
+  --black-100: #09090b;
+  --black-200: #121214;
+  --white-100: #f4f4f5;
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--white-100);
+  overflow-x: hidden;
+  background-image: radial-gradient(circle at 50% 0%, #1a1525 0%, var(--primary) 50%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #e879f9, #bae6fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Base Layout */
+.section-padding {
+  padding: 6rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Enhanced Typography for Modern Aesthetic */
+.head-text {
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.sub-text {
+  font-size: 1.125rem;
+  color: var(--secondary);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+}
+
+/* Bento Box Containers */
+.bento-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.bento-box {
+  background-color: var(--tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-box:hover {
+  border-color: rgba(232, 121, 249, 0.5);
+  box-shadow: 0 0 40px rgba(232, 121, 249, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Timeline Custom Styles */
+.custom-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.custom-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 3.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 14px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 15px var(--accent);
+}
+
+.btn-primary {
+  background-color: var(--white-100);
+  color: var(--primary);
+  padding: 0.75rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+input, textarea {
+  background-color: rgba(255,255,255,0.03);
+  color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--accent);
+}
+
+/* Aesary Process Exact Design (Complex Phase Cards) */
+.aesary-section {
+  background-color: #0D2C2D;
+  position: relative;
+  width: 100%;
+  padding: 8rem 0;
+  overflow: clip; /* Clip background without hiding scroll */
+}
+
+.aesary-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  position: relative;
+}
+
+.aesary-phase-card {
+  position: sticky;
+  background: rgba(240, 245, 245, 0.85); /* Very light frost */
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 40px;
+  min-height: 80vh;
+  margin-bottom: 6rem;
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.aesary-phase-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+  z-index: 0;
+  mix-blend-mode: multiply;
+  opacity: 0.7;
+}
+
+.aesary-phase-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(235, 242, 242, 0.95) 45%, rgba(235, 242, 242, 0.4) 100%);
+  z-index: 1;
+}
+
+.aesary-phase-content {
+  position: relative;
+  z-index: 2;
+  padding: 6rem 5%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+}
+
+.aesary-phase-header-block {
+  margin-bottom: 4rem;
+  max-width: 900px;
+}
+
+.aesary-phase-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(6rem, 10vw, 9rem);
+  color: #1a202c;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.aesary-phase-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: rgba(26, 32, 44, 0.6);
+  line-height: 1.2;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.aesary-step-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 650px;
+  position: relative;
+  z-index: 10;
+}
+
+.aesary-step-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.aesary-step-card:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.aesary-step-badge {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top left, #5FD9C2, #187D70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 15px rgba(24, 125, 112, 0.4);
+}
+
+.aesary-step-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.aesary-step-text p {
+  color: #4a5568;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .aesary-phase-bg {
+    width: 100%;
+    opacity: 0.3;
+  }
+  .aesary-phase-overlay {
+    background: linear-gradient(180deg, rgba(235, 242, 242, 0.95) 20%, rgba(235, 242, 242, 0.7) 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .aesary-phase-content {
+    padding: 4rem 1rem;
+  }
+  .aesary-step-card {
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+.aesary-phase-year {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  color: #8b9ca5;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Aesary Hero Redesign */
+.aesary-hero {
+  position: relative;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  min-height: 100vh;
+  background-color: #0D2C2D;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0;
+  overflow: clip;
+}
+
+.aesary-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  position: relative;
+  z-index: 10;
+}
+
+.aesary-hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aesary-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.aesary-logo-image {
+  width: 100%;
+  max-width: 500px;
+  max-height: 50vh;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 0rem;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
+  mix-blend-mode: screen; 
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 70%);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 70%);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+  cursor: pointer;
+}
+
+.aesary-logo-image:hover {
+  transform: scale(1.05) translateY(-10px);
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6)) brightness(1.1);
+}
+
+.aesary-hero-name {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-top: -1.5rem; /* Pull tighter to logo because masks hide bounds */
+}
+
+.aesary-hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.aesary-about-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #DBBC8E;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.aesary-about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.aesary-about-text p {
+  font-family: 'Inter', sans-serif;
+  color: #E0E0E0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+@media (max-width: 900px) {
+  .aesary-hero-content {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
